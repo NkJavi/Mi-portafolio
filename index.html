@@ -3,255 +3,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio laboral de Jose Javier Perez Peregrina. Experiencia, casos reales, stack técnico y contacto.">
-  <title>Portafolio | Jose Javier Perez Peregrina</title>
+  <title>Jose Javier Perez Peregrina | Technical Program & Operations Manager</title>
+  <meta name="description" content="Technical Program & Operations Manager especializado en despliegues TI de gran escala, control operativo y automatización con enfoque en equipos, tiempos y presupuesto.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://master.portafolio-1u3.pages.dev/">
+  <link rel="alternate" hreflang="es" href="https://master.portafolio-1u3.pages.dev/">
+  <link rel="alternate" hreflang="en" href="https://master.portafolio-1u3.pages.dev/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://master.portafolio-1u3.pages.dev/">
+  <meta property="og:title" content="Jose Javier Perez Peregrina | Technical Program & Operations Manager">
+  <meta property="og:description" content="Despliegues TI de gran escala y automatización operativa con foco en equipos, tiempos y presupuesto.">
+  <meta property="og:image" content="https://master.portafolio-1u3.pages.dev/assets/profile.jpg">
+  <meta property="og:locale" content="es_MX">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jose Javier Perez Peregrina | Technical Program & Operations Manager">
+  <meta name="twitter:description" content="Infraestructura + software para proyectos TI complejos con resultados medibles en tiempo y presupuesto.">
+  <meta name="twitter:image" content="https://master.portafolio-1u3.pages.dev/assets/profile.jpg">
+
+  <meta name="x-ga4-id" content="">
+  <meta name="x-plausible-domain" content="">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="bg-layer" aria-hidden="true"></div>
+  <div class="page-bg" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="container topbar">
-      <a class="brand" href="#experiencia" data-tab-target="experiencia">
-        <span class="brand-mark" aria-hidden="true"></span>
+      <a class="brand" href="#top" data-track="nav-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
         <span>Jose Javier Perez Peregrina</span>
       </a>
-
-      <nav class="tabs" aria-label="Navegación principal">
-        <button class="tab-link is-active" type="button" data-tab-target="experiencia">Experiencia</button>
-        <button class="tab-link" type="button" data-tab-target="casos">Casos Reales</button>
-        <button class="tab-link" type="button" data-tab-target="stack">Stack</button>
-        <button class="tab-link" type="button" data-tab-target="contacto">Contacto</button>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#perfil" data-i18n="nav_profile" data-track="nav-profile">Perfil</a>
+        <a href="#casos" data-i18n="nav_cases" data-track="nav-cases">Casos</a>
+        <a href="#stack" data-i18n="nav_stack" data-track="nav-stack">Stack</a>
+        <a href="#contacto" data-i18n="nav_contact" data-track="nav-contact">Contacto</a>
       </nav>
-
-      <button class="btn btn-outline topbar-cta" type="button" data-tab-target="contacto">Agendar llamada</button>
+      <div class="topbar-actions">
+        <button class="lang-toggle" type="button" id="langToggle" data-track="language-toggle">EN</button>
+        <a class="btn btn-outline" href="#contacto" data-i18n="cta_schedule" data-track="cta-schedule">Agendar llamada</a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="panel is-active" data-tab="experiencia" id="experiencia">
-      <div class="container section-xl reveal">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">PROJECT MANAGER DE TI</p>
-            <h1>
-              Lidero proyectos complejos de TI con foco en ejecución,
-              orden operativo y
-              <span class="gradient-word rotating-word" data-words="resultados,continuidad,mejora real">resultados</span>.
-            </h1>
-            <p class="lead">
-              Mi trabajo se centra en resolver problemas reales de operación: coordinar equipos,
-              definir prioridades y convertir procesos manuales en flujos controlados.
-              En mi proyecto más reciente coordiné un despliegue de alrededor de 9,000 equipos
-              y automatizamos el seguimiento para dirección y operación.
-            </p>
-            <div class="actions">
-              <button class="btn btn-primary" type="button" data-tab-target="casos">Ver casos</button>
-              <button class="btn btn-ghost" type="button" data-tab-target="contacto">Contactar</button>
-            </div>
+  <main id="top">
+    <section class="section section-hero reveal" id="perfil">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">TECHNICAL PROGRAM & OPERATIONS</p>
+          <h1 data-i18n="hero_title">Lidero despliegues TI de gran escala para integradores y corporativos con control de equipos, tiempos y presupuesto.</h1>
+          <p class="lead" data-i18n="hero_lead">Soy un perfil híbrido: conecto logística de infraestructura (campo, equipos, operación) con sistemas de software (tableros, automatizaciones y reporteo) para que proyectos complejos sí lleguen a producción sin perder trazabilidad.</p>
+          <div class="hero-badges">
+            <span data-i18n="hero_badge_1">Despliegues masivos de TI</span>
+            <span data-i18n="hero_badge_2">Automatización operativa con IA</span>
+            <span data-i18n="hero_badge_3">Integradores y corporativos</span>
           </div>
-
-          <aside class="hero-profile card">
-            <img class="profile-photo" src="assets/profile.jpg" alt="Foto de perfil de Jose Javier Perez Peregrina">
-            <h2>Jose Javier Perez Peregrina</h2>
-            <p class="role-chip">Automatización y mejora de procesos</p>
-            <ul class="bullet-list compact">
-              <li>Coordinación de proyectos TI de punta a punta</li>
-              <li>Control operativo en campo y seguimiento ejecutivo</li>
-              <li>Automatización de reportes para decisiones rápidas</li>
-            </ul>
-          </aside>
-        </div>
-      </div>
-
-      <div class="container section reveal">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">TRAYECTORIA</p>
-            <h2>Experiencia profesional</h2>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#casos" data-i18n="cta_view_cases" data-track="cta-view-cases">Ver casos clave</a>
+            <a class="btn btn-ghost" href="#contacto" data-i18n="cta_contact" data-track="cta-contact">Contactar</a>
           </div>
         </div>
 
-        <ol class="timeline">
-          <li class="timeline-item card">
-            <div class="timeline-top">
-              <h3>Project Manager</h3>
-              <p>2021 - Actualidad</p>
-            </div>
-            <p class="timeline-company">Gorat Digital Services S.A. de C.V · Puebla, México</p>
-            <p class="timeline-copy">
-              Dirección de proyectos TI, coordinación entre operación y áreas técnicas,
-              y gestión de un centro de control operativo con reporteo automatizado.
-            </p>
-          </li>
-
-          <li class="timeline-item card">
-            <div class="timeline-top">
-              <h3>Consultor TI (Autónomo)</h3>
-              <p>2019 - Actualidad</p>
-            </div>
-            <p class="timeline-company">Servicios independientes</p>
-            <p class="timeline-copy">
-              Planeación y seguimiento de proyectos tecnológicos, mejora de procesos
-              y acompañamiento en implementación.
-            </p>
-          </li>
-
-          <li class="timeline-item card">
-            <div class="timeline-top">
-              <h3>Responsable de Proyectos de TI</h3>
-              <p>2018 - 2019</p>
-            </div>
-            <p class="timeline-company">PlugInc</p>
-            <p class="timeline-copy">
-              Seguimiento operativo de cronogramas, coordinación de entregables y
-              estandarización de prácticas de ejecución.
-            </p>
-          </li>
-        </ol>
+        <aside class="hero-aside card">
+          <picture>
+            <source srcset="assets/profile.avif" type="image/avif">
+            <source srcset="assets/profile.webp" type="image/webp">
+            <img class="profile-photo" src="assets/profile.jpg" alt="Foto de perfil de Jose Javier Perez Peregrina" width="172" height="172" decoding="async" fetchpriority="high">
+          </picture>
+          <h2>Jose Javier Perez Peregrina</h2>
+          <p class="executive-title" data-i18n="exec_title">Technical Program & Operations Manager | TI + Ejecución</p>
+          <p class="value-prop" data-i18n="value_prop">Convierto operación compleja en ejecución controlada: despliegue masivo de equipos de cómputo, control operativo y visibilidad diaria para dirección y equipos técnicos.</p>
+          <div class="focus-block">
+            <p class="focus-title" data-i18n="hero_focus_title">Enfoque actual</p>
+            <p class="focus-copy" data-i18n="hero_focus_body">Coordino ejecución técnica y reporte estratégico para entornos operativos con alta presión de tiempo.</p>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="panel" data-tab="casos" id="casos">
-      <div class="container section reveal">
+    <section class="section reveal" aria-label="Indicadores clave">
+      <div class="container stats-grid">
+        <article class="card stat-card">
+          <p class="stat-value">~9,000 PCs</p>
+          <p class="stat-label" data-i18n="stat_1">Equipos coordinados en despliegue reciente</p>
+        </article>
+        <article class="card stat-card">
+          <p class="stat-value">Tiempo crítico</p>
+          <p class="stat-label" data-i18n="stat_2">Ejecución bajo ventanas de tiempo críticas</p>
+        </article>
+        <article class="card stat-card">
+          <p class="stat-value">Presupuesto</p>
+          <p class="stat-label" data-i18n="stat_3">Control operativo con enfoque en presupuesto</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="impacto">
+      <div class="container">
         <div class="section-head split">
           <div>
-            <p class="eyebrow">CASOS REALES</p>
-            <h2>Qué problema había, qué hice y qué cambió</h2>
+            <p class="eyebrow" data-i18n="impact_eyebrow">PROPOSICIÓN DE VALOR</p>
+            <h2 data-i18n="impact_title">Conecto estrategia, ejecución técnica y operación diaria</h2>
           </div>
-          <div class="filter-group" role="tablist" aria-label="Filtrar casos">
-            <button class="filter-btn is-active" type="button" data-filter="all">Todos</button>
-            <button class="filter-btn" type="button" data-filter="deploy">Despliegue</button>
-            <button class="filter-btn" type="button" data-filter="ops">Operación</button>
-            <button class="filter-btn" type="button" data-filter="data">Datos</button>
-          </div>
+          <p class="lead compact" data-i18n="impact_intro">Trabajo en la intersección entre campo y dirección: diseño cadencia operativa, priorizo incidentes y convierto datos en decisiones de ejecución.</p>
         </div>
 
-        <div class="cards-1 projects-grid">
-          <article class="card project-card" data-category="deploy">
-            <p class="project-label">Despliegue TI</p>
-            <h3>Renovación tecnológica de alrededor de 9,000 equipos</h3>
-            <div class="case-block">
-              <p><strong>Reto:</strong> múltiples sedes, ventanas de tiempo cortas y riesgo de frenar operación.</p>
-              <p><strong>Acción:</strong> planeé despliegue por olas, checklist único de instalación y reportes automáticos de avance/incidencias.</p>
-              <p><strong>Resultado:</strong> visibilidad diaria para dirección, mejor coordinación en campo y menos retrabajo técnico.</p>
-            </div>
+        <div class="impact-grid">
+          <article class="card impact-card">
+            <h3 data-i18n="pillar1_title">Ejecución en campo sin fricción</h3>
+            <p data-i18n="pillar1_body">Defino despliegues por olas, checklists y control de calidad para mantener continuidad operativa.</p>
           </article>
-
-          <article class="card project-card" data-category="ops">
-            <p class="project-label">Operación (NDA)</p>
-            <h3>Centro de control operativo en proyecto actual</h3>
-            <div class="case-block">
-              <p><strong>Reto:</strong> incidencias dispersas en distintos canales y poca trazabilidad para priorizar.</p>
-              <p><strong>Acción:</strong> consolidé seguimiento en un tablero operativo, con clasificación por criticidad y responsable.</p>
-              <p><strong>Resultado:</strong> respuesta más ordenada, seguimiento puntual y reuniones de avance con datos consistentes.</p>
-            </div>
+          <article class="card impact-card">
+            <h3 data-i18n="pillar2_title">Visibilidad en tiempo de decisión</h3>
+            <p data-i18n="pillar2_body">Consolido trazabilidad e indicadores para que dirección y equipos técnicos actúen con claridad.</p>
           </article>
-
-          <article class="card project-card" data-category="data">
-            <p class="project-label">Datos y automatización</p>
-            <h3>Reporteo ejecutivo automático</h3>
-            <div class="case-block">
-              <p><strong>Reto:</strong> reportes manuales semanales tomaban varias horas y se detectaban inconsistencias.</p>
-              <p><strong>Acción:</strong> conecté fuentes, normalicé indicadores y programé la generación automática del reporte.</p>
-              <p><strong>Resultado:</strong> tiempo de preparación reducido de horas a minutos y menos errores de consolidación.</p>
-            </div>
+          <article class="card impact-card">
+            <h3 data-i18n="pillar3_title">Automatización orientada a resultado</h3>
+            <p data-i18n="pillar3_body">Implemento tableros y reporteo automático que reduce retrabajo y acelera respuesta operativa.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="panel" data-tab="stack" id="stack">
-      <div class="container section reveal">
+    <section class="section reveal" id="casos">
+      <div class="container">
         <div class="section-head">
-          <div>
-            <p class="eyebrow">STACK TÉCNICO</p>
-            <h2>Herramientas que uso en proyectos reales</h2>
-          </div>
+          <p class="eyebrow" data-i18n="cases_eyebrow">CASOS CLAVE</p>
+          <h2 data-i18n="cases_title">Dos frentes, una misma capacidad de ejecución</h2>
         </div>
 
-        <div class="cards-2">
-          <article class="card">
-            <h3>Tecnologías</h3>
-            <div class="tag-cloud">
-              <span>JavaScript</span>
-              <span>Node.js</span>
-              <span>Python</span>
-              <span>SQL</span>
-              <span>REST APIs</span>
-              <span>Webhooks</span>
-              <span>Cloudflare Pages</span>
-              <span>Google Sheets</span>
-              <span>Dashboards</span>
-            </div>
+        <div class="cases-grid">
+          <article class="card case-card">
+            <p class="case-tag" data-i18n="case1_tag">Infraestructura</p>
+            <h3 data-i18n="case1_title">Despliegue masivo de ~9,000 computadoras</h3>
+            <p data-i18n-html="case1_body"><strong>Reto:</strong> múltiples sedes, tiempos críticos y riesgo de interrupción operativa.<br><strong>Acción:</strong> planeación por olas, checklist técnico único, coordinación de instalación/configuración y tablero diario de avance e incidencias.<br><strong>Resultado:</strong> continuidad operativa durante implementación, mejor control de tiempos y menor retrabajo.</p>
           </article>
 
+          <article class="card case-card">
+            <p class="case-tag" data-i18n="case2_tag">Operación + Datos</p>
+            <h3 data-i18n="case2_title">Automatización de control y reporteo (NDA)</h3>
+            <p data-i18n-html="case2_body"><strong>Reto:</strong> seguimiento disperso, presión de tiempos y necesidad de controlar presupuesto operativo.<br><strong>Acción:</strong> tablero operativo con prioridad por criticidad, alertas y reportes automáticos para dirección.<br><strong>Resultado:</strong> decisiones más rápidas, control operativo consistente y mejor visibilidad de desvíos de tiempo/costo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-label="Experiencia">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="exp_eyebrow">EXPERIENCIA</p>
+          <h2 data-i18n="exp_title">Trayectoria enfocada en resultados</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="card timeline-item">
+            <div class="timeline-top">
+              <h3 data-i18n="exp1_title">Project Manager · Gorat Digital Services</h3>
+              <p data-i18n="exp1_date">2021 - Actualidad</p>
+            </div>
+            <p class="timeline-copy" data-i18n="exp1_body">Lidero proyectos TI con operación en campo y gestión ejecutiva. Actualmente coordino un centro de control operativo con reportes automatizados y trazabilidad de incidencias.</p>
+          </article>
+
+          <article class="card timeline-item">
+            <div class="timeline-top">
+              <h3 data-i18n="exp2_title">Consultor TI Independiente</h3>
+              <p data-i18n="exp2_date">2019 - Actualidad</p>
+            </div>
+            <p class="timeline-copy" data-i18n="exp2_body">Diseño y seguimiento de iniciativas de mejora operativa, priorización de entregables y soporte en implementación para equipos técnicos y directivos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="stack">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="stack_eyebrow">STACK PM TÉCNICO</p>
+          <h2 data-i18n="stack_title">Herramientas para gestionar y herramientas para ejecutar</h2>
+        </div>
+
+        <div class="stack-grid">
           <article class="card">
-            <h3>Gestión y operación</h3>
+            <h3 data-i18n="stack_col1_title">Gestión de proyecto</h3>
             <div class="tag-cloud">
-              <span>Project Planning</span>
+              <span>Planificación y seguimiento</span>
+              <span>Gestión de riesgos</span>
               <span>Control operativo</span>
               <span>Gestión de incidencias</span>
-              <span>Seguimiento ejecutivo</span>
-              <span>Mejora de procesos</span>
               <span>Service Delivery</span>
             </div>
           </article>
-        </div>
-      </div>
 
-      <div class="container section reveal">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">CERTIFICACIONES Y CURSOS</p>
-            <h2>Formación relevante</h2>
-          </div>
-        </div>
-
-        <div class="cards-2">
-          <article class="card cert-card">
-            <p class="cert-kind">Certificación</p>
-            <h3>Programa de Especialización de Gobierno de Dell Technologies</h3>
-            <p>Dell Technologies</p>
-          </article>
-          <article class="card cert-card">
-            <p class="cert-kind">Certificación</p>
-            <h3>MCLA</h3>
-            <p>Credential profesional</p>
-          </article>
-          <article class="card cert-card">
-            <p class="cert-kind">Curso</p>
-            <h3>Inicio de proyectos: comenzar un proyecto con éxito</h3>
-            <p>Formación en gestión de proyectos</p>
-          </article>
-          <article class="card cert-card">
-            <p class="cert-kind">Curso</p>
-            <h3>Preguntas para tomar decisiones basadas en datos</h3>
-            <p>Formación en analítica y datos</p>
+          <article class="card">
+            <h3 data-i18n="stack_col2_title">Fluidez técnica para liderazgo</h3>
+            <div class="tag-cloud">
+              <span data-i18n="stack_net_1">Configuración de redes y TI</span>
+              <span data-i18n="stack_net_2">Automatización con IA</span>
+              <span data-i18n="stack_net_3">Python / JavaScript / SQL</span>
+              <span>APIs / Webhooks</span>
+              <span>Dashboards</span>
+              <span>SQL</span>
+              <span>Node.js / Python</span>
+              <span>Cloudflare Pages</span>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="panel" data-tab="contacto" id="contacto">
-      <div class="container section-xl reveal">
-        <article class="contact-card card">
+    <section class="section section-contact reveal" id="contacto">
+      <div class="container">
+        <article class="card contact-card">
           <div>
-            <p class="eyebrow">CONTACTO</p>
-            <h2>¿Platicamos tu proyecto?</h2>
-            <p class="lead compact">
-              Si necesitas a alguien que pueda ordenar la operación, coordinar equipos y ejecutar,
-              estoy disponible para colaborar.
-            </p>
+            <p class="eyebrow" data-i18n="contact_eyebrow">CONTACTO</p>
+            <h2 data-i18n="contact_title">Si tu proyecto es complejo, hablemos con datos y plan</h2>
+            <p class="lead compact" data-i18n="contact_body">Disponible para oportunidades donde se necesite ejecución técnica, coordinación operativa y enfoque de resultados.</p>
           </div>
-
           <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:javierpperegrina@gmail.com">javierpperegrina@gmail.com</a>
-            <a class="btn btn-outline" href="https://www.linkedin.com/in/javierperezperegrina/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="btn btn-outline" href="tel:+522225813746">222 581 3746</a>
+            <a class="btn btn-primary" href="mailto:javierpperegrina@gmail.com" data-track="contact-email">javierpperegrina@gmail.com</a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/javierperezperegrina/" target="_blank" rel="noopener noreferrer" data-track="contact-linkedin">LinkedIn</a>
+            <a class="btn btn-outline" href="tel:+522225813746" data-track="contact-phone">222 581 3746</a>
           </div>
         </article>
       </div>
@@ -260,8 +238,8 @@
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <p><span id="year"></span> · Portafolio laboral de Jose Javier Perez Peregrina</p>
-      <p>Project Manager TI</p>
+      <p><span id="year"></span> · <span data-i18n="footer_left">Portafolio profesional de Jose Javier Perez Peregrina</span></p>
+      <p data-i18n="footer_right">Technical Program & Operations Manager</p>
     </div>
   </footer>
 
