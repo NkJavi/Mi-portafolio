@@ -255,3 +255,79 @@ a {
   text-transform: uppercase;
   color: var(--ink-faint);
 }
+/* =============================================
+   SECTION HEADER (reused by multiple sections)
+   ============================================= */
+.section-header {
+  padding: 8px 24px;
+  border-top: var(--border);
+  border-bottom: var(--border-sub);
+  background: var(--ink);
+  color: var(--bg);
+  font-family: 'Courier New', monospace;
+  font-size: 8px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   CASOS
+   ============================================= */
+#casos {
+  border-bottom: var(--border);
+}
+
+.casos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.caso {
+  padding: 28px 24px;
+  border-right: var(--border-col);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.caso--right {
+  border-right: none;
+}
+
+.caso-n {
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 48px;
+  color: var(--red);
+  line-height: 1;
+}
+
+.caso-title {
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.caso-body {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  flex: 1;
+}
+
+.caso-result {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: 'Courier New', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  align-self: flex-start;
+}
+
+.caso-result--nda {
+  background: var(--ink-soft);
+}
