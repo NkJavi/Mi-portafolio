@@ -39,6 +39,7 @@ Complete visual and structural redesign of Jose Javier Pérez Peregrina's recrui
 - No border-radius on structural elements (zero or 2px max)
 - Tags/pills: `0px` border-radius (hard edges)
 - Generous padding per section: `20-28px`
+- Inter-section gap (between major sections): `0px` — sections are separated by their own top borders, not margins
 
 ---
 
@@ -55,7 +56,7 @@ Three sub-zones stacked:
 
 **a) Masthead bar**
 - Left: `PORTFOLIO — 2025 — MEXICO CITY` (monospace, faint)
-- Right: `● DISPONIBLE` badge in red
+- Right: `● DISPONIBLE` badge in red (ES) / `● AVAILABLE` (EN) — uses `hero.available` translation key
 
 **b) Headline + Tags**
 - Left: Giant name `JOSE / JAVIER / PÉREZ` (Arial Black, 54px+, `PÉREZ` in red)
@@ -75,8 +76,8 @@ Three sub-zones stacked:
 - Black pill result label (`ENTREGA 100%` / `NDA PROTECTED`)
 
 Cases to include:
-1. Rollout Nacional de Infraestructura (~9,000 devices)
-2. Centro de Control Operativo (NDA-protected, ~60% response time improvement)
+1. **Rollout Nacional de Infraestructura** — Coordinación de ~9,000 equipos de cómputo en múltiples sitios. Gestión de equipos de campo, control de entrega y SLAs. Resultado: entrega al 100% sin incidentes críticos. [COPY TBD — placeholder ok for implementation]
+2. **Centro de Control Operativo** [NDA] — Diseño e implementación de sistema de monitoreo en tiempo real con automatización de reportes y alertas. Tiempo de respuesta a incidentes reducido 60%+. [NDA: no mencionar empresa, solo el proyecto]
 
 ### 4. Stack de Herramientas *(New Section)*
 Two rows of pills:
@@ -88,12 +89,14 @@ Timeline-style list:
 - `YEAR–` | **JOB TITLE** | Description — layout using `grid-template-columns: 64px 1fr`
 - 3 entries (most recent first)
 - Dividers between entries: `1px solid #ddd`
+- Content: use existing entries from current `index.html` — copy from current experience section [TBD: implementor pulls real data from source file]
 
 ### 6. Contacto / CTA
 Full-width dark block (`background: #111`):
 - Left: `¿HABLAMOS? / DISPONIBLE AHORA` (Arial Black, red accent)
 - Right: 3 buttons — LINKEDIN · EMAIL · DESCARGAR CV (red)
 - Top border: `3px solid #ff3d00` (color break)
+- CV button: links to `assets/cv.pdf` — use same conditional logic as current (check if file exists before showing button)
 
 ---
 
@@ -137,11 +140,11 @@ New translation keys needed:
 
 ## Fonts to Load
 
-Replace Sora with:
+Remove existing Sora `<link>` from `<head>`. Replace with:
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap" rel="stylesheet">
 ```
-Arial Black is system font — no additional load needed.
+Arial Black is system font — no additional load needed. Fallback `sans-serif` is acceptable if Arial Black unavailable (low-risk: recruiter audience skews Windows/macOS).
 Courier New is system font — no additional load needed.
 
 ---
