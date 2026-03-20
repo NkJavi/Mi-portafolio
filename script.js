@@ -10,11 +10,13 @@ const prefersReducedMotion = window.matchMedia(
 const i18n = {
   es: {
     nav_label: "Secciones principales",
+    nav_profile: "Perfil",
+    nav_cases: "Casos",
+    nav_stack: "Stack",
+    nav_contact: "Contacto",
     nav_results: "Resultados",
     nav_capabilities: "Capacidades",
-    nav_cases: "Casos",
     nav_faq: "FAQ",
-    nav_contact: "Contacto",
     header_cta: "Hablemos",
     hero_eyebrow: "TPM · DELIVERY · TECHNICAL OPERATIONS",
     hero_title:
@@ -208,12 +210,14 @@ const i18n = {
     lang_toggle_label: "Switch language to English",
   },
   en: {
-    nav_label: "Primary sections",
+    nav_label: "Main sections",
+    nav_profile: "Profile",
+    nav_cases: "Cases",
+    nav_stack: "Stack",
+    nav_contact: "Contact",
     nav_results: "Results",
     nav_capabilities: "Capabilities",
-    nav_cases: "Cases",
     nav_faq: "FAQ",
-    nav_contact: "Contact",
     header_cta: "Let's talk",
     hero_eyebrow: "TPM · DELIVERY · TECHNICAL OPERATIONS",
     hero_title:

@@ -93,73 +93,22 @@
   </head>
   <body>
     <div class="portfolio">
-        <header class="site-header">
-      <div class="container topbar">
-        <a class="brand" href="#top" data-track="nav-brand">
-          <span class="brand-dot" aria-hidden="true"></span>
-          <span>Jose Javier Perez Peregrina</span>
-        </a>
+        <header class="site-nav" id="top">
+  <div class="nav-inner">
+    <span class="nav-logo" aria-label="Jose Javier Perez Peregrina">JJ Pérez</span>
+    <nav class="nav-links" aria-label="Secciones principales" data-i18n-attr="aria-label:nav_label">
+      <a href="#perfil"   data-nav-link data-i18n="nav_profile"  data-track="nav-profile">Perfil</a>
+      <a href="#casos"    data-nav-link data-i18n="nav_cases"    data-track="nav-cases">Casos</a>
+      <a href="#stack"    data-nav-link data-i18n="nav_stack"    data-track="nav-stack">Stack</a>
+      <a href="#contacto" data-nav-link data-i18n="nav_contact"  data-track="nav-contact">Contacto</a>
+    </nav>
+    <button class="nav-lang" type="button" id="langToggle" aria-label="Cambiar idioma" data-track="language-toggle">
+      ES / EN
+    </button>
+  </div>
+</header>
 
-        <nav
-          class="nav-links"
-          aria-label="Secciones principales"
-          data-i18n-attr="aria-label:nav_label"
-        >
-          <a
-            href="#resultados"
-            data-nav-link
-            data-i18n="nav_results"
-            data-track="nav-results"
-            >Resultados</a
-          >
-          <a
-            href="#capacidades"
-            data-nav-link
-            data-i18n="nav_capabilities"
-            data-track="nav-capabilities"
-            >Capacidades</a
-          >
-          <a
-            href="#casos"
-            data-nav-link
-            data-i18n="nav_cases"
-            data-track="nav-cases"
-            >Casos</a
-          >
-          <a href="#faq" data-nav-link data-i18n="nav_faq" data-track="nav-faq"
-            >FAQ</a
-          >
-          <a
-            href="#contacto"
-            data-nav-link
-            data-i18n="nav_contact"
-            data-track="nav-contact"
-            >Contacto</a
-          >
-        </nav>
-
-        <div class="topbar-actions">
-          <button
-            class="lang-toggle"
-            type="button"
-            id="langToggle"
-            aria-label="Cambiar idioma"
-            data-track="language-toggle"
-          >
-            EN
-          </button>
-          <a
-            class="btn btn-outline btn-header"
-            href="#contacto"
-            data-i18n="header_cta"
-            data-track="header-cta"
-            >Hablemos</a
-          >
-        </div>
-      </div>
-        </header>
-
-        <main id="top">
+        <main>
       <section
         class="section section-hero reveal"
         id="perfil"
