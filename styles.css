@@ -23,6 +23,7 @@
 }
 
 html {
+  min-height: 100vh;
   scroll-behavior: smooth;
 }
 
@@ -56,6 +57,7 @@ a {
   opacity: 1;
   transform: none;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
