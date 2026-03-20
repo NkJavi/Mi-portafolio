@@ -381,3 +381,49 @@ a {
   background: var(--ink);
   color: var(--bg);
 }
+/* =============================================
+   EXPERIENCIA
+   ============================================= */
+#experiencia {
+  border-bottom: var(--border);
+}
+
+.exp-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 24px;
+  padding: 24px;
+  border-bottom: var(--border-sub);
+  align-items: start;
+}
+
+.exp-row:last-child {
+  border-bottom: none;
+}
+
+.exp-year {
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 16px;
+  color: var(--red);
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.exp-title {
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.exp-body {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}

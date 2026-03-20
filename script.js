@@ -160,7 +160,7 @@ const i18n = {
     operate4_title: "Escalo con criterio",
     operate4_body:
       "Cuando algo se desvía, traduzco el impacto, propongo salida y destrabo decisiones.",
-    exp_eyebrow: "EXPERIENCIA Y FLUIDEZ TÉCNICA",
+    exp_eyebrow: "EXPERIENCIA",
     exp_title: "No soy dev puro ni manager decorativo",
     exp_intro:
       "Mi valor está en que puedo coordinar la ejecución y también entender suficiente capa técnica para ordenar sistemas, automatización y operación.",
@@ -382,18 +382,18 @@ const i18n = {
     operate4_title: "Escalate with judgment",
     operate4_body:
       "When something drifts, I translate the impact, propose a path, and unblock decisions.",
-    exp_eyebrow: "EXPERIENCE AND TECHNICAL FLUENCY",
+    exp_eyebrow: "EXPERIENCE",
     exp_title: "I am not a pure developer or a decorative manager",
     exp_intro:
       "My value is that I can coordinate execution while also understanding enough of the technical layer to organize systems, automation, and operations.",
     exp1_title: "Project Manager · Gorat Digital Services",
-    exp1_date: "2021 - Present",
+    exp1_date: "2021–",
     exp1_body:
-      "Leading IT projects with field execution, executive coordination, and the buildout of a control center with traceability and reporting.",
+      "IT project leadership with field operations, executive coordination and a custom control center with traceability and reporting.",
     exp2_title: "Independent IT Consultant",
-    exp2_date: "2019 - Present",
+    exp2_date: "2019–",
     exp2_body:
-      "Operational improvement, deliverable prioritization, implementation support, and guidance for technical and leadership teams.",
+      "Operational improvement, deliverable prioritization, implementation support and guidance for technical and executive teams.",
     fluence_title: "Technical fluency that actually helps",
     fluence_group1: "Operations and delivery",
     fluence_group2: "Automation",
