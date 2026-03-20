@@ -427,3 +427,92 @@ a {
   line-height: 1.6;
   color: var(--ink-soft);
 }
+/* =============================================
+   CONTACTO / CTA
+   ============================================= */
+#contacto {
+  border-top: 3px solid var(--red);
+}
+
+.cta-inner {
+  background: var(--ink);
+  padding: 32px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cta-title {
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--bg);
+  line-height: 1;
+  font-weight: 900;
+}
+
+.cta-sub {
+  font-family: 'Courier New', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 6px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: 1.5px solid var(--bg);
+  color: var(--bg);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cta-btn:hover {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.cta-btn--red {
+  background: var(--red);
+  border-color: var(--red);
+  color: white;
+}
+
+.cta-btn--red:hover {
+  background: white;
+  color: var(--red);
+}
+
+.is-hidden { display: none; }
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.site-footer {
+  border-top: var(--border);
+  padding: 12px 24px;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.footer-copy {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+}
