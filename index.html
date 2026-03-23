@@ -68,6 +68,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
     <script type="application/ld+json">
       {
@@ -92,6 +93,19 @@
     </script>
   </head>
   <body>
+    <div id="ts-gate" class="ts-gate" role="status" aria-label="Verificando acceso">
+      <div class="ts-gate-inner">
+        <div class="ts-gate-logo">JJ PÉREZ</div>
+        <div
+          class="cf-turnstile"
+          data-sitekey="0x4AAAAAACvBM5Yjal3V7JtA"
+          data-callback="onTurnstileSuccess"
+          data-appearance="always"
+          data-theme="light"
+        ></div>
+      </div>
+    </div>
+
     <div class="portfolio">
         <header class="site-nav" id="top">
   <div class="nav-inner">

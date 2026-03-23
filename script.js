@@ -1,3 +1,24 @@
+// ── Turnstile gate ──────────────────────────────────────────
+(function () {
+  try {
+    if (sessionStorage.getItem("ts_verified") === "1") {
+      const gate = document.getElementById("ts-gate");
+      if (gate) gate.remove();
+    }
+  } catch {}
+})();
+
+window.onTurnstileSuccess = function () {
+  try {
+    sessionStorage.setItem("ts_verified", "1");
+  } catch {}
+  const gate = document.getElementById("ts-gate");
+  if (!gate) return;
+  gate.classList.add("ts-gate--done");
+  setTimeout(() => gate.remove(), 420);
+};
+// ────────────────────────────────────────────────────────────
+
 const yearEl = document.getElementById("year");
 const revealBlocks = document.querySelectorAll(".reveal");
 const langToggle = document.getElementById("langToggle");
