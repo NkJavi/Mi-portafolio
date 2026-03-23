@@ -431,3 +431,50 @@ if (!prefersReducedMotion) {
     trackEvent("page_loaded", { lang: document.documentElement.lang || "es" });
   });
 }
+
+function initMetricCounters() {
+  if (prefersReducedMotion) return;
+
+  const counters = document.querySelectorAll(".metric-n[data-count]");
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        const suffix = el.dataset.suffix || "";
+        const duration = 1200;
+        const start = performance.now();
+
+        function tick(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(target * eased);
+
+          if (target >= 1000) {
+            el.textContent = Math.round(current / 1000) + suffix;
+          } else {
+            el.textContent = current + suffix;
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          }
+        }
+
+        requestAnimationFrame(tick);
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  counters.forEach((el) => observer.observe(el));
+}
+
+initMetricCounters();
