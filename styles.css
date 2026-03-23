@@ -279,7 +279,7 @@ a {
 
 .casos-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .caso {
@@ -291,6 +291,10 @@ a {
 }
 
 .caso--right {
+  border-right: none;
+}
+
+.caso--last {
   border-right: none;
 }
 
@@ -357,7 +361,7 @@ a {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--ink-faint);
-  min-width: 80px;
+  min-width: 100px;
   padding-top: 6px;
   flex-shrink: 0;
 }
@@ -500,6 +504,46 @@ a {
 .is-hidden { display: none; }
 
 /* =============================================
+   CERTIFICACIONES
+   ============================================= */
+#certificaciones {
+  border-bottom: var(--border);
+}
+
+.certs-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 16px;
+  padding: 14px 24px;
+  border-bottom: var(--border-sub);
+  align-items: baseline;
+}
+
+.cert-row:last-child {
+  border-bottom: none;
+}
+
+.cert-issuer {
+  font-family: 'Courier New', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+.cert-name {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+/* =============================================
    TURNSTILE GATE
    ============================================= */
 .ts-gate {
@@ -593,7 +637,16 @@ a {
   }
 
   .caso--right {
+    border-bottom: var(--border-col);
+  }
+
+  .caso--last {
     border-bottom: none;
+  }
+
+  .cert-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .stack-row {
