@@ -64,7 +64,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -99,6 +99,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
     <div id="ts-gate" class="ts-gate" role="status" aria-label="Verificando acceso">
       <div class="ts-gate-inner">
         <div class="ts-gate-logo">JJ PÉREZ</div>
@@ -114,22 +115,92 @@
 
     <div class="portfolio">
         <header class="site-nav" id="top">
-  <div class="nav-inner">
-    <span class="nav-logo" aria-label="Jose Javier Perez Peregrina">JJ Pérez</span>
-    <nav class="nav-links" aria-label="Secciones principales" data-i18n-attr="aria-label:nav_label">
-      <a href="#perfil"      data-nav-link data-i18n="nav_profile" data-track="nav-profile">Perfil</a>
-      <a href="#casos"       data-nav-link data-i18n="nav_cases"   data-track="nav-cases">Casos</a>
-      <a href="#stack"       data-nav-link data-i18n="nav_stack"   data-track="nav-stack">Stack</a>
-      <a href="#experiencia" data-nav-link data-i18n="nav_exp"     data-track="nav-exp">Exp.</a>
-      <a href="#contacto"    data-nav-link data-i18n="nav_contact" data-track="nav-contact">Contacto</a>
-    </nav>
-    <button class="nav-lang" type="button" id="langToggle" aria-label="Cambiar idioma" data-track="language-toggle">
-      ES / EN
-    </button>
-  </div>
-</header>
+          <div class="nav-inner">
+            <span class="nav-logo" aria-label="Jose Javier Perez Peregrina">JJ Pérez</span>
 
-    <main id="main-content">
+            <!-- Nav desktop: visible en >780px -->
+            <nav
+              class="nav-links"
+              id="nav-desktop"
+              aria-label="Secciones principales"
+              data-i18n-attr="aria-label:nav_label"
+            >
+              <a href="#perfil"          data-nav-link data-i18n="nav_profile" data-track="nav-profile">Perfil</a>
+              <a href="#casos"           data-nav-link data-i18n="nav_cases"   data-track="nav-cases">Casos</a>
+              <a href="#stack"           data-nav-link data-i18n="nav_stack"   data-track="nav-stack">Stack</a>
+              <a href="#experiencia"     data-nav-link data-i18n="nav_exp"     data-track="nav-exp">Exp.</a>
+              <a href="#certificaciones" data-nav-link data-i18n="nav_certs"   data-track="nav-certs">Certs.</a>
+              <a href="#contacto"        data-nav-link data-i18n="nav_contact" data-track="nav-contact">Contacto</a>
+            </nav>
+
+            <!-- Controles derecha: hamburger (mobile only) + lang toggle -->
+            <div class="nav-controls">
+              <button
+                class="nav-hamburger"
+                type="button"
+                id="navHamburger"
+                aria-label="Abrir menú de navegación"
+                aria-expanded="false"
+                aria-controls="nav-drawer"
+                data-track="nav-hamburger"
+              >
+                <span class="hamburger-bar hamburger-bar--top" aria-hidden="true"></span>
+                <span class="hamburger-bar hamburger-bar--mid" aria-hidden="true"></span>
+                <span class="hamburger-bar hamburger-bar--bot" aria-hidden="true"></span>
+              </button>
+
+              <button
+                class="nav-lang"
+                type="button"
+                id="langToggle"
+                aria-label="Cambiar idioma"
+                data-track="language-toggle"
+              >
+                ES / EN
+              </button>
+            </div>
+          </div>
+
+          <!-- Drawer móvil — panel lateral derecho -->
+          <div
+            class="nav-drawer"
+            id="nav-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menú de navegación"
+            aria-hidden="true"
+          >
+            <div class="nav-drawer-inner">
+              <div class="nav-drawer-header">
+                <span class="nav-drawer-logo" aria-hidden="true">JJ PÉREZ</span>
+                <button
+                  class="nav-drawer-close"
+                  type="button"
+                  id="navDrawerClose"
+                  aria-label="Cerrar menú de navegación"
+                >
+                  <span aria-hidden="true">✕</span>
+                </button>
+              </div>
+              <nav
+                class="nav-drawer-links"
+                aria-label="Secciones del portafolio"
+              >
+                <a href="#perfil"          class="nav-drawer-link" data-nav-link data-i18n="nav_profile" data-track="nav-drawer-profile">Perfil</a>
+                <a href="#casos"           class="nav-drawer-link" data-nav-link data-i18n="nav_cases"   data-track="nav-drawer-cases">Casos</a>
+                <a href="#stack"           class="nav-drawer-link" data-nav-link data-i18n="nav_stack"   data-track="nav-drawer-stack">Stack</a>
+                <a href="#experiencia"     class="nav-drawer-link" data-nav-link data-i18n="nav_exp"     data-track="nav-drawer-exp">Exp.</a>
+                <a href="#certificaciones" class="nav-drawer-link" data-nav-link data-i18n="nav_certs"   data-track="nav-drawer-certs">Certs.</a>
+                <a href="#contacto"        class="nav-drawer-link" data-nav-link data-i18n="nav_contact" data-track="nav-drawer-contact">Contacto</a>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Backdrop semitransparente al abrir drawer -->
+          <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+        </header>
+
+    <main id="main-content" aria-label="Contenido principal">
 
       <!-- ======= HERO ======= -->
       <section id="perfil" data-nav-section="perfil" class="reveal">
@@ -383,7 +454,7 @@
 
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <span class="footer-copy">Jose Javier Perez Peregrina — <span id="year"></span></span>
     </footer>
 

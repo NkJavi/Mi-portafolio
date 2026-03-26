@@ -31,6 +31,7 @@ const prefersReducedMotion = window.matchMedia(
 const i18n = {
   es: {
     nav_label: "Secciones principales",
+    nav_drawer_label: "Secciones del portafolio",
     nav_profile: "Perfil",
     nav_cases: "Casos",
     nav_stack: "Stack",
@@ -97,6 +98,7 @@ const i18n = {
   },
   en: {
     nav_label: "Main sections",
+    nav_drawer_label: "Portfolio sections",
     nav_profile: "Profile",
     nav_cases: "Cases",
     nav_stack: "Stack",
@@ -284,7 +286,7 @@ function setActiveNav(sectionId) {
     const isActive = target === sectionId;
     link.classList.toggle("is-active", isActive);
     if (isActive) {
-      link.setAttribute("aria-current", "true");
+      link.setAttribute("aria-current", "location");
     } else {
       link.removeAttribute("aria-current");
     }
@@ -369,9 +371,13 @@ async function syncCvLinks() {
 }
 
 async function syncHeadshot() {
+  // Guard: sólo ejecuta si existe el elemento picture en el DOM.
+  // La sección de foto no está activa en la versión actual del HTML.
   const picture = document.querySelector("[data-headshot-picture]");
-  const img = picture?.querySelector("img");
-  const webpSource = picture?.querySelector('[data-headshot-source="webp"]');
+  if (!picture) return;
+
+  const img = picture.querySelector("img");
+  const webpSource = picture.querySelector('[data-headshot-source="webp"]');
   const fallbackSrc = img?.dataset.fallbackSrc || "assets/profile.jpg";
   const fallbackWebp = "assets/profile.webp";
 
@@ -450,10 +456,9 @@ function initMetricCounters() {
         const duration = 1200;
         const start = performance.now();
 
-        function tick(now) {
+        const tick = (now) => {
           const elapsed = now - start;
           const progress = Math.min(elapsed / duration, 1);
-          // Ease out cubic
           const eased = 1 - Math.pow(1 - progress, 3);
           const current = Math.round(target * eased);
 
@@ -466,7 +471,7 @@ function initMetricCounters() {
           if (progress < 1) {
             requestAnimationFrame(tick);
           }
-        }
+        };
 
         requestAnimationFrame(tick);
       });
@@ -477,4 +482,81 @@ function initMetricCounters() {
   counters.forEach((el) => observer.observe(el));
 }
 
+// ── Mobile nav / drawer ──────────────────────────────────
+function initMobileNav() {
+  const hamburger = document.getElementById("navHamburger");
+  const drawer    = document.getElementById("nav-drawer");
+  const closeBtn  = document.getElementById("navDrawerClose");
+  const backdrop  = document.getElementById("navBackdrop");
+
+  if (!hamburger || !drawer || !closeBtn || !backdrop) return;
+
+  function getFocusable() {
+    return Array.from(
+      drawer.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter((el) => !el.closest("[aria-hidden='true']"));
+  }
+
+  function openDrawer() {
+    drawer.classList.add("is-open");
+    backdrop.classList.add("is-visible");
+    drawer.setAttribute("aria-hidden", "false");
+    hamburger.setAttribute("aria-expanded", "true");
+    hamburger.setAttribute("aria-label",
+      document.documentElement.lang === "en"
+        ? "Close navigation menu"
+        : "Cerrar menú de navegación");
+    document.body.style.overflow = "hidden";
+    const focusable = getFocusable();
+    if (focusable.length) focusable[0].focus();
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove("is-open");
+    backdrop.classList.remove("is-visible");
+    drawer.setAttribute("aria-hidden", "true");
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.setAttribute("aria-label",
+      document.documentElement.lang === "en"
+        ? "Open navigation menu"
+        : "Abrir menú de navegación");
+    document.body.style.overflow = "";
+    hamburger.focus();
+  }
+
+  const isOpen = () => drawer.classList.contains("is-open");
+
+  drawer.addEventListener("keydown", (e) => {
+    if (!isOpen()) return;
+    if (e.key === "Escape") { e.preventDefault(); closeDrawer(); return; }
+    if (e.key !== "Tab") return;
+
+    const focusable = getFocusable();
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last  = focusable[focusable.length - 1];
+
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  hamburger.addEventListener("click", () => isOpen() ? closeDrawer() : openDrawer());
+  closeBtn.addEventListener("click", closeDrawer);
+  backdrop.addEventListener("click", closeDrawer);
+
+  drawer.querySelectorAll(".nav-drawer-link").forEach((link) => {
+    link.addEventListener("click", () => { if (isOpen()) closeDrawer(); });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 780 && isOpen()) closeDrawer();
+  });
+}
+
+initMobileNav();
 initMetricCounters();
