@@ -12,7 +12,7 @@
   --container:    1100px;
   --font-display: 'Arial Black', Arial, sans-serif;
   --font-mono:    'Courier New', monospace;
-  --font-body:    'Manrope', system-ui, sans-serif;
+  --font-body:    'Manrope', 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif;
 }
 
 /* =============================================
@@ -716,6 +716,9 @@ a {
 .certs-list {
   display: flex;
   flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .cert-row {
@@ -1051,5 +1054,177 @@ a {
 
   .cta-inner {
     padding: 32px 16px;
+  }
+}
+
+/* =============================================
+   MICRO-INTERACCIONES
+   ============================================= */
+
+/* .caso — card con sombra Brutalist en hover */
+.caso {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.caso:hover,
+.caso:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* .exp-row — acento rojo en borde izquierdo al hover */
+.exp-row {
+  border-left: 3px solid transparent;
+  transition: border-left-color 0.15s ease;
+}
+
+.exp-row:hover {
+  border-left-color: var(--red);
+}
+
+/* .cert-row — background sutil en hover */
+.cert-row {
+  transition: background-color 0.12s ease;
+}
+
+.cert-row:hover {
+  background-color: rgba(17, 17, 17, 0.04);
+  background-color: color-mix(in srgb, var(--ink) 4%, transparent);
+}
+
+/* .cta-btn — elevación sutil */
+.cta-btn {
+  transition: transform 0.12s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.cta-btn:hover,
+.cta-btn:focus-visible {
+  transform: translateY(-1px);
+}
+
+/* .pill — inversión ink/bg en hover */
+.pill {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.pill:hover {
+  background-color: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caso,
+  .exp-row,
+  .cert-row,
+  .cta-btn,
+  .pill {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* =============================================
+   PRINT
+   ============================================= */
+
+@page {
+  size: A4 portrait;
+  margin: 18mm 16mm 18mm 16mm;
+}
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Ocultar chrome de navegación y UI interactiva */
+  .site-nav,
+  .ts-gate,
+  .nav-drawer,
+  .nav-backdrop,
+  .skip-link,
+  .nav-lang {
+    display: none !important;
+  }
+
+  /* Ocultar CTAs excepto email */
+  .cta-btn:not([href^="mailto"]) {
+    display: none !important;
+  }
+
+  /* Reveal blocks: forzar visibles */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Layout sin bordes laterales */
+  .portfolio {
+    max-width: 100% !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  body {
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  h1 { font-size: 22pt; }
+  h2 { font-size: 13pt; }
+  p  { font-size: 10pt; }
+
+  /* Page breaks entre secciones */
+  #casos,
+  #experiencia,
+  #certificaciones {
+    break-before: page;
+  }
+
+  .caso,
+  .exp-row,
+  .cert-row {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Mostrar URLs de links externos */
+  a[href^="http"]::after,
+  a[href^="mailto"]::after {
+    content: " (" attr(href) ")";
+    font-size: 7.5pt;
+    font-family: 'Courier New', monospace;
+    color: #444 !important;
+    word-break: break-all;
+  }
+
+  /* No mostrar URL en anchors internos */
+  a[href^="#"]::after {
+    content: none;
+  }
+
+  /* Email CTA */
+  .cta-btn[href^="mailto"] {
+    display: inline-block !important;
+    border: 1.5pt solid #000 !important;
+    padding: 4pt 10pt !important;
+  }
+
+  .cta-btn[href^="mailto"]::after {
+    content: none;
+  }
+
+  /* Pills legibles */
+  .pill {
+    border: 1px solid #000 !important;
+    padding: 1pt 4pt !important;
   }
 }

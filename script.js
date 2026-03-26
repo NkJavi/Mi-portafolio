@@ -354,7 +354,12 @@ async function assetExists(url) {
 }
 
 async function syncCvLinks() {
-  const hasCv = await assetExists("assets/cv.pdf");
+  const CACHE_KEY = "cv_exists";
+  const cached = sessionStorage.getItem(CACHE_KEY);
+  const hasCv = cached !== null ? cached === "1" : await assetExists("assets/cv.pdf");
+  if (cached === null) {
+    try { sessionStorage.setItem(CACHE_KEY, hasCv ? "1" : "0"); } catch {}
+  }
 
   document.querySelectorAll('[data-requires-asset="cv"]').forEach((el) => {
     el.classList.toggle("is-hidden", !hasCv);
@@ -420,7 +425,7 @@ initNavHighlight();
 initTracking();
 initAnalytics();
 void syncCvLinks();
-void syncHeadshot();
+// void syncHeadshot(); // activar cuando se añada [data-headshot-picture] al HTML
 
 if (langToggle) {
   langToggle.addEventListener("click", () => {
@@ -491,15 +496,13 @@ function initMobileNav() {
 
   if (!hamburger || !drawer || !closeBtn || !backdrop) return;
 
-  function getFocusable() {
-    return Array.from(
-      drawer.querySelectorAll(
-        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
-      )
-    ).filter((el) => !el.closest("[aria-hidden='true']"));
-  }
+  const getFocusable = () => Array.from(
+    drawer.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )
+  ).filter((el) => !el.closest("[aria-hidden='true']"));
 
-  function openDrawer() {
+  const openDrawer = () => {
     drawer.classList.add("is-open");
     backdrop.classList.add("is-visible");
     drawer.setAttribute("aria-hidden", "false");
@@ -511,9 +514,9 @@ function initMobileNav() {
     document.body.style.overflow = "hidden";
     const focusable = getFocusable();
     if (focusable.length) focusable[0].focus();
-  }
+  };
 
-  function closeDrawer() {
+  const closeDrawer = () => {
     drawer.classList.remove("is-open");
     backdrop.classList.remove("is-visible");
     drawer.setAttribute("aria-hidden", "true");
@@ -524,7 +527,7 @@ function initMobileNav() {
         : "Abrir menú de navegación");
     document.body.style.overflow = "";
     hamburger.focus();
-  }
+  };
 
   const isOpen = () => drawer.classList.contains("is-open");
 
@@ -538,10 +541,10 @@ function initMobileNav() {
     const first = focusable[0];
     const last  = focusable[focusable.length - 1];
 
-    if (e.shiftKey) {
-      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
-    } else {
-      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
     }
   });
 
